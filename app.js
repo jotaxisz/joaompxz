@@ -2,10 +2,18 @@ const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const fs = require('fs');
 const path = require('path');
+const puppeteer = require('puppeteer-core'); // Aqui é onde você deve declarar o puppeteer
 
 const bot = new Client({
     authStrategy: new LocalAuth()
 });
+
+puppeteer.launch({
+  executablePath: '/path/to/your/chromium' // Substitua pelo caminho correto
+}).then(browser => {
+  console.log('Chromium launched successfully');
+});
+
 
 const horaAbertura = 8;
 const horaFechamento = 19;
