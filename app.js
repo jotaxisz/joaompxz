@@ -8,8 +8,6 @@ const bot = new Client({
     authStrategy: new LocalAuth()
 });
 
-const { Client, LocalAuth } = require('whatsapp-web.js');
-const puppeteer = require('puppeteer-core');
 
 const client = new Client({
     authStrategy: new LocalAuth(),
