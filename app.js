@@ -8,12 +8,17 @@ const bot = new Client({
     authStrategy: new LocalAuth()
 });
 
-puppeteer.launch({
-  executablePath: '/path/to/your/chromium' // Substitua pelo caminho correto
-}).then(browser => {
-  console.log('Chromium launched successfully');
+const { Client, LocalAuth } = require('whatsapp-web.js');
+const puppeteer = require('puppeteer-core');
+
+const client = new Client({
+    authStrategy: new LocalAuth(),
+    puppeteer: {
+        executablePath: '/usr/bin/google-chrome-stable' // Substitua pelo caminho correto
+    }
 });
 
+client.initialize();
 
 const horaAbertura = 8;
 const horaFechamento = 19;
