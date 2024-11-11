@@ -9,12 +9,14 @@ puppeteer.launch({
   executablePath: '/path/to/your/chrome' // Substitua pelo caminho correto do seu Chrome
 }).then(browser => {
   console.log('Chrome launched successfully');
+});
 
 const bot = new Client({
     authStrategy: new LocalAuth()
 });
 
-client.initialize();
+// Inicializa o bot
+bot.initialize();
 
 const horaAbertura = 8;
 const horaFechamento = 19;
